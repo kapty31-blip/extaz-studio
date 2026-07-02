@@ -171,38 +171,9 @@ function HeroVisual() {
     >
       <div className="orbital orbital-one" />
       <div className="orbital orbital-two" />
-      <div className="visual-panel laptop-panel">
-        <div className="panel-top">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="code-lines">
-          <i style={{ width: '68%' }} />
-          <i style={{ width: '46%' }} />
-          <i style={{ width: '81%' }} />
-          <i style={{ width: '54%' }} />
-        </div>
-        <div className="chart">
-          <b style={{ height: '35%' }} />
-          <b style={{ height: '62%' }} />
-          <b style={{ height: '48%' }} />
-          <b style={{ height: '78%' }} />
-          <b style={{ height: '55%' }} />
-        </div>
-      </div>
-      <motion.div className="floating-chip chip-one" animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }}>
-        <Send size={18} /> Telegram
+      <motion.div className="hero-logo-wrap" animate={{ y: [0, -12, 0] }} transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}>
+        <img src="/images/extaz-logo.png" alt="Extaz Studio logo" className="hero-logo-img" />
       </motion.div>
-      <motion.div className="floating-chip chip-two" animate={{ y: [0, 10, 0] }} transition={{ duration: 4.8, repeat: Infinity }}>
-        <BrainCircuit size={18} /> AI Grid
-      </motion.div>
-      <motion.div className="floating-chip chip-three" animate={{ y: [0, -8, 0] }} transition={{ duration: 3.7, repeat: Infinity }}>
-        <ChartNoAxesCombined size={18} /> Growth
-      </motion.div>
-      <div className="logo-prism" aria-label="Extaz Studio visual mark">
-        <span className="prism-mark" />
-      </div>
     </motion.div>
   );
 }
