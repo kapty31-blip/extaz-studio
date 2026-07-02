@@ -200,8 +200,8 @@ function HeroVisual() {
       <motion.div className="floating-chip chip-three" animate={{ y: [0, -8, 0] }} transition={{ duration: 3.7, repeat: Infinity }}>
         <ChartNoAxesCombined size={18} /> Growth
       </motion.div>
-      <div className="logo-prism">
-        <img src="/extaz-logo.png" alt="Логотип Extaz Studio" />
+      <div className="logo-prism" aria-label="Extaz Studio visual mark">
+        <span className="prism-mark" />
       </div>
     </motion.div>
   );

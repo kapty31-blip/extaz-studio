@@ -29,30 +29,28 @@ a {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(circle at 19% 12%, rgba(255,255,255,0.13), transparent 26%),
-    radial-gradient(circle at 84% 7%, rgba(255,255,255,0.1), transparent 22%),
-    radial-gradient(circle at 54% 58%, rgba(192,192,192,0.08), transparent 36%),
-    linear-gradient(135deg, #050505 0%, #0a0a0a 42%, #111 100%);
+    radial-gradient(900px circle at 18% 8%, rgba(245,245,245,0.09), transparent 58%),
+    radial-gradient(760px circle at 82% 12%, rgba(192,192,192,0.07), transparent 56%),
+    radial-gradient(1100px circle at 52% 62%, rgba(255,255,255,0.045), transparent 62%),
+    linear-gradient(135deg, #030303 0%, #080808 40%, #101010 72%, #050505 100%);
 }
 
 .site-bg::before {
   content: "";
   position: absolute;
-  inset: 0;
-  opacity: 0.21;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at 50% 15%, black, transparent 70%);
+  inset: -18%;
+  opacity: 0.78;
+  background:
+    radial-gradient(closest-side at 26% 18%, rgba(255,255,255,0.08), transparent 72%),
+    radial-gradient(closest-side at 78% 28%, rgba(255,255,255,0.055), transparent 76%);
+  filter: blur(70px);
 }
 
 .site-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.08;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  background: linear-gradient(180deg, rgba(255,255,255,0.035), transparent 22%, rgba(0,0,0,0.28) 100%);
 }
 
 main > section,
@@ -190,17 +188,22 @@ header {
 .hero-visual::before {
   content: "";
   position: absolute;
-  inset: 8% 0 0 8%;
+  inset: 4% -6% -6% 0;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 58%);
-  filter: blur(30px);
+  background:
+    radial-gradient(circle at 44% 34%, rgba(255,255,255,0.18), transparent 38%),
+    radial-gradient(circle at 68% 70%, rgba(192,192,192,0.1), transparent 44%);
+  filter: blur(58px);
+  opacity: .82;
 }
 
 .visual-panel,
 .floating-chip,
 .logo-prism {
   border: 1px solid rgba(255,255,255,0.11);
-  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.035));
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045) 45%, rgba(255,255,255,0.075)),
+    linear-gradient(180deg, #181818, #090909);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 35px 100px rgba(0,0,0,0.55);
   backdrop-filter: blur(22px);
 }
@@ -214,6 +217,17 @@ header {
   border-radius: 8px;
   padding: 22px;
   transform: rotateX(58deg) rotateZ(-14deg) rotateY(0deg);
+  overflow: hidden;
+}
+
+.laptop-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,0.11), transparent 34%),
+    linear-gradient(115deg, rgba(255,255,255,0.04), transparent 44%, rgba(255,255,255,0.07));
+  pointer-events: none;
 }
 
 .panel-top {
@@ -291,13 +305,50 @@ header {
   height: 220px;
   overflow: hidden;
   border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 34% 18%, rgba(255,255,255,0.2), transparent 32%),
+    linear-gradient(145deg, rgba(245,245,245,0.16), rgba(255,255,255,0.035) 42%, rgba(0,0,0,0.34)),
+    #0b0b0b;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -26px 70px rgba(0,0,0,0.5),
+    0 30px 90px rgba(0,0,0,0.54),
+    0 0 52px rgba(255,255,255,0.08);
 }
 
-.logo-prism img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: contrast(1.08) saturate(.72);
+.logo-prism::before,
+.logo-prism::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(24px);
+}
+
+.logo-prism::before {
+  inset: 18% 12% 48% 20%;
+  background: rgba(255,255,255,0.18);
+}
+
+.logo-prism::after {
+  inset: 62% 18% 12% 34%;
+  background: rgba(255,255,255,0.08);
+}
+
+.prism-mark {
+  position: relative;
+  z-index: 1;
+  width: 54%;
+  height: 54%;
+  background:
+    linear-gradient(135deg, #ffffff 0%, #9d9d9d 32%, #f5f5f5 58%, #6f6f6f 100%);
+  clip-path: polygon(16% 6%, 88% 6%, 76% 26%, 28% 26%, 28% 40%, 75% 40%, 63% 59%, 28% 59%, 28% 94%, 16% 80%);
+  box-shadow: 0 0 42px rgba(255,255,255,0.18);
+}
+
+img {
+  image-rendering: auto;
 }
 
 .orbital {
