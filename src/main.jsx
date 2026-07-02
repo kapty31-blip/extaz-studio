@@ -114,7 +114,7 @@ function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a href="#home" className="group flex items-center gap-3">
           <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-md border border-white/10 bg-white/[0.04] shadow-[0_0_28px_rgba(255,255,255,0.08)]">
-            <img src="/images/extaz-logo.png" alt="Extaz Studio" className="h-full w-full object-contain opacity-90" />
+            <img src="/extaz-logo.png" alt="Extaz Studio" className="h-full w-full object-cover opacity-90" />
           </span>
           <span className="leading-none">
             <span className="metal-text block text-lg font-semibold tracking-[0.08em]">Extaz</span>
@@ -165,17 +165,44 @@ function HeroVisual() {
   return (
     <motion.div
       className="hero-visual"
-      initial={{ opacity: 0, scale: 0.94, y: 24 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.94, rotateX: 8 }}
+      animate={{ opacity: 1, scale: 1, rotateX: 0 }}
       transition={{ duration: 1, delay: 0.25, ease: 'easeOut' }}
     >
-      <motion.div
-        className="hero-logo-frame"
-        animate={{ y: [0, -14, 0], rotate: [0, 0.4, 0] }}
-        transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <img src="/images/extaz-logo.png" alt="Extaz Studio logo" className="hero-logo-image" />
+      <div className="orbital orbital-one" />
+      <div className="orbital orbital-two" />
+      <div className="visual-panel laptop-panel">
+        <div className="panel-top">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="code-lines">
+          <i style={{ width: '68%' }} />
+          <i style={{ width: '46%' }} />
+          <i style={{ width: '81%' }} />
+          <i style={{ width: '54%' }} />
+        </div>
+        <div className="chart">
+          <b style={{ height: '35%' }} />
+          <b style={{ height: '62%' }} />
+          <b style={{ height: '48%' }} />
+          <b style={{ height: '78%' }} />
+          <b style={{ height: '55%' }} />
+        </div>
+      </div>
+      <motion.div className="floating-chip chip-one" animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity }}>
+        <Send size={18} /> Telegram
       </motion.div>
+      <motion.div className="floating-chip chip-two" animate={{ y: [0, 10, 0] }} transition={{ duration: 4.8, repeat: Infinity }}>
+        <BrainCircuit size={18} /> AI Grid
+      </motion.div>
+      <motion.div className="floating-chip chip-three" animate={{ y: [0, -8, 0] }} transition={{ duration: 3.7, repeat: Infinity }}>
+        <ChartNoAxesCombined size={18} /> Growth
+      </motion.div>
+      <div className="logo-prism" aria-label="Extaz Studio visual mark">
+        <span className="prism-mark" />
+      </div>
     </motion.div>
   );
 }
@@ -196,10 +223,10 @@ function App() {
       <div className="site-bg" />
       <Header />
 
-      <section id="home" className="hero-section relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:pt-24">
+      <section id="home" className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-5 pb-20 pt-32 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:pt-24">
         <Reveal>
           <p className="kicker">Premium IT Development Studio</p>
-          <h1 className="hero-title max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-white sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-white sm:text-6xl lg:text-7xl">
             Разработка цифровых решений под ключ
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-white/62 sm:text-xl">
